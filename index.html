@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحتي الشخصية</title>
+    <title>Boda Mohamed | Social Links</title>
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;900&display=swap" rel="stylesheet">
+
     <style>
-            * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-        }
-
         body {
-            font-family: sans-serif;
+            font-family: 'Cairo', sans-serif;
             background: #0f0f0f;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,35 +32,39 @@
 
         .card {
             width: 360px;
-            max-width: 100%;
             padding: 30px;
             border-radius: 25px;
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255,255,255,0.07);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255,255,255,0.15);
             text-align: center;
             box-shadow: 0 0 25px rgba(0,0,0,0.5);
         }
 
-        .card img.profile {
+        .profile {
             width: 140px;
             height: 140px;
-            object-fit: cover;
             border-radius: 50%;
+            object-fit: cover;
             border: 4px solid rgba(255,255,255,0.9);
         }
 
         h2 {
             color: #fff;
-            margin: 20px 0;
+            margin-top: 20px;
             font-size: 25px;
+        }
+
+        .job-title {
+            color: rgba(255,255,255,0.75);
+            font-size: 14px;
+            margin: 6px 0 20px;
         }
 
         .icon-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 22px;
-            margin-top: 25px;
         }
 
         .icon-btn {
@@ -68,45 +75,105 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 34px;
-            color: white;
-            transition: 0.35s;
-            backdrop-filter: blur(6px);
+            color: #fff;
+            position: relative;
+            transition: 0.3s;
             border: 1px solid rgba(255,255,255,0.2);
             margin: auto;
+            font-size: 32px;
         }
 
         .icon-btn img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            border-radius: 50%;
+            width: 48px;
+            height: 48px;
         }
 
-        /* Glow حسب لون كل تطبيق */
+        .icon-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* رقم التليفون (1 و 2) */
+        .phone-num {
+            position: absolute;
+            bottom: 12px;
+            left: 14px;          /* على الشمال */
+            font-size: 15px;
+            font-weight: 900;    /* Bold تقيل */
+            text-shadow: 0 0 6px rgba(0,0,0,0.6);
+        }
+
+        /* Hover colors */
         .fb:hover { background: #1877f2; box-shadow: 0 0 18px #1877f2; }
         .ig:hover { background: #d6249f; box-shadow: 0 0 18px #d6249f; }
         .wa:hover { background: #25d366; box-shadow: 0 0 18px #25d366; }
-        .sc:hover { background: #fffc00; color: #000; box-shadow: 0 0 18px #fffc00; }
-        .ph:hover { background: #00aaff; box-shadow: 0 0 18px #00aaff; }
         .instapay:hover { background: #7a00ff; box-shadow: 0 0 18px #7a00ff; }
+        .ph:hover { background: #00aaff; box-shadow: 0 0 18px #00aaff; }
 
-        /* ======== Media Queries ======== */
         @media (max-width: 400px) {
-            .card {
-                padding: 20px;
-            }
-            .card img.profile {
-                width: 120px;
-                height: 120px;
-            }
-            h2 {
-                font-size: 22px;
-            }
             .icon-btn {
                 width: 70px;
                 height: 70px;
-                font-size: 28px;
+                font-size: 26px;
+            }
+
+            .phone-num {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="Boda.jpeg" alt="Profile" class="profile">
+
+    <h2>Ahmed Eldosoky</h2>
+    <p class="job-title">Car Electrical Engineer</p>
+
+    <div class="icon-grid">
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/1HBPTG91dh/" class="icon-btn fb">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/ahmed_eldosoky20?igsh=MWdwYXlzOGFraGpubQ==" class="icon-btn ig">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201002444835" class="icon-btn wa">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- InstaPay -->
+        <a href="https://ipn.eg/yourlink" class="icon-btn instapay">
+            <img src="InstaPay-Logo-removebg-preview white.png" alt="InstaPay">
+        </a>
+
+        <!-- Phone 1 -->
+        <a href="tel:+201222910311" class="icon-btn ph">
+            <i class="fas fa-phone-alt"></i>
+            <span class="phone-num">1</span>
+        </a>
+
+        <!-- Phone 2 -->
+        <a href="tel:+201002444835" class="icon-btn ph">
+            <i class="fas fa-phone-alt"></i>
+            <span class="phone-num">2</span>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>                font-size: 28px;
             }
             .icon-btn img {
                 width: 40px;
@@ -144,5 +211,6 @@
 
 </body>
 </html>
+
 
 
